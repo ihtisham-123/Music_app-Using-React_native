@@ -1,7 +1,8 @@
 import React from 'react'
-import { StyleSheet, FlatList, Image, TouchableOpacity } from 'react-native';
-import { Text, View } from '@/components/Themed';
+import { StyleSheet, FlatList, Image, TouchableOpacity, Text, View, } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
+import FootBar from './FootBar';
+import { Link } from 'expo-router';
 
 
 const Item = ({ artist }) => (
@@ -12,13 +13,15 @@ const Item = ({ artist }) => (
 
     </View>
     <View>
-      <TouchableOpacity>
-        <Ionicons  name="play" size={32} color="green" />
+      <TouchableOpacity><Link href={'/music'}>
+        <Ionicons name="play" size={32} color="green" />
+        </Link>
       </TouchableOpacity>
     </View>
 
 
   </View>
+
 
 );
 
@@ -39,6 +42,7 @@ const ArtistComponent = ({ artist }) => {
         keyExtractor={item => item.id}
       />
 
+      <FootBar />
     </View>
 
   )
@@ -47,7 +51,8 @@ const ArtistComponent = ({ artist }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'grey'
+    backgroundColor: 'grey',
+    
 
   },
   box: {
@@ -55,10 +60,10 @@ const styles = StyleSheet.create({
     color: 'white',
     borderColor: 'white',
     borderWidth: 1,
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'space-between',
-    
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+
 
 
   },

@@ -9,60 +9,6 @@ const artist=[
         name: 'Zain',
         songName:'Song Name'
     },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    },
-    {
-        id:'2',
-        name: 'Sami',
-        songName:'Song Name'
-    }
+    
 ]
 export default artist

@@ -6,7 +6,6 @@ export default function TabOneScreen() {
   return (
     <>
     <ArtistComponent  artist={artist}/>
-    <FootBar/>
     </>
     
   );

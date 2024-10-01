@@ -1,37 +1,57 @@
-import React from 'react';
-import { View, StyleSheet } from 'react-native';
+import React, { useState, useEffect } from 'react';
+import { View, StyleSheet, TouchableOpacity } from 'react-native';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { TouchableOpacity } from 'react-native';
-import { Link } from 'expo-router';
-import Search from '@/app/search';
+import { Link, usePathname } from 'expo-router';
 
 const FootBar = () => {
+  const pathname = usePathname();  
+  const [activePage, setActivePage] = useState(pathname);  
+  useEffect(() => {
+    setActivePage(pathname);
+  }, [pathname]);
+
+const isActive = (path) => path === activePage;
 
   return (
     <View style={styles.container}>
 
       <TouchableOpacity>
-        <Link href={'/'} >
-          <Ionicons style={styles.icon} name="home-sharp" size={32} color="green" />
-        </Link>
-
-      </TouchableOpacity>
-
-      <TouchableOpacity>
-        <Link href={'search'}  >
-          <Ionicons style={styles.icon} name="search" size={32} color="green" />
+        <Link href={'/'}>
+          <Ionicons
+            style={[styles.icon, { color: isActive('/') ? 'black' : 'green' }]}
+            name="home-sharp"
+            size={32}
+          />
         </Link>
       </TouchableOpacity>
 
       <TouchableOpacity>
-        <Link href={'music'} >
-          <Ionicons style={styles.icon} name="disc" size={32} color="green" />
+        <Link href={'/search'}>
+          <Ionicons
+            style={[styles.icon, { color: isActive('/search') ? 'black' : 'green' }]}
+            name="search"
+            size={32}
+          />
         </Link>
       </TouchableOpacity>
 
       <TouchableOpacity>
-        <Link href={'profile'} >
-          <Ionicons style={styles.icon} name="person" size={32} color="green" />
+        <Link href={'/music'}>
+          <Ionicons
+            style={[styles.icon, { color: isActive('/music') ? 'black' : 'green' }]}
+            name="disc"
+            size={32}
+          />
+        </Link>
+      </TouchableOpacity>
+
+      <TouchableOpacity>
+        <Link href={'/profile'}>
+          <Ionicons
+            style={[styles.icon, { color: isActive('/profile') ? 'black' : 'green' }]}
+            name="person"
+            size={32}
+          />
         </Link>
       </TouchableOpacity>
 
@@ -52,8 +72,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     paddingHorizontal: 50,
     margin: 10,
-    // backgroundColor:'black',
-  }
+  },
 });
 
 export default FootBar;
