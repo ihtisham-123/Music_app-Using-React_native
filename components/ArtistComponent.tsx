@@ -13,8 +13,14 @@ const Item = ({ artist }) => (
 
     </View>
     <View>
-      <TouchableOpacity><Link href={'/music'}>
-        <Ionicons name="play" size={32} color="green" />
+      <TouchableOpacity>
+        <Link href={
+         { pathname:'/music',
+          params: {...artist}
+         }
+
+        }   >
+        <Ionicons name="play" size={32} color="green"  artist={[artist]} />
         </Link>
       </TouchableOpacity>
     </View>
@@ -30,9 +36,6 @@ const ArtistComponent = ({ artist }) => {
   console.log(artist)
 
   return (
-
-
-
     <View style={styles.container}>
       <Text style={styles.title}>HomePage</Text>
 
