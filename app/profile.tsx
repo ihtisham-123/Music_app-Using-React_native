@@ -1,13 +1,22 @@
 import FootBar from '@/components/FootBar'
 import React from 'react'
-import { Text, View, StyleSheet } from 'react-native'
-
+import { Text, View, StyleSheet ,TouchableOpacity} from 'react-native'
+import { Ionicons } from '@expo/vector-icons'
 const profile= () => {
   return (
    
     <View style={styles.container}>
-      <View>
-        <Text>Profile Page</Text>
+      <View style={styles.track}>
+        <Text>Liked Track</Text>
+        <TouchableOpacity >
+
+        <Ionicons
+        name={'arrow-down'}
+        size={32}
+        color="green"
+      />
+        </TouchableOpacity>
+
       </View>
 
       <View>
@@ -29,6 +38,11 @@ const styles = StyleSheet.create({
 
     justifyContent: 'space-between',
   },
+  track:{
+    flexDirection:"row",
+    justifyContent:"space-between",
+    padding:10
+  }
 
 })
 export default profile
